@@ -3,6 +3,7 @@
     <div class="heading">
       <p>Skills</p>
       <app-back-btn class="back_btn"></app-back-btn>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn class="new_home_btn"></app-menu-btn>
     <div class="skills_description">
@@ -11,7 +12,7 @@
           <p>Categories</p>
         </div>
         <div class="skill_categories">
-          <ul>
+          <ul class="ul_categories">
             <li @click="selectedComponent = 'AppPcbDesign'">PCB Design</li>
             <li @click="selectedComponent = 'AppHardwareProgramming'">Hardware Programming</li>
             <li @click="selectedComponent = 'AppSoftwareProgramming'">Software Programming</li>
@@ -35,6 +36,7 @@
 <script>
 import BackBtn from "./shared/Back";
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 import PcbDesign from "./skills/PcbDesign";
 import HardwareProgramming from "./skills/HardwareProgramming";
 import SoftwareProgramming from "./skills/SoftwareProgramming";
@@ -48,7 +50,8 @@ export default {
     AppHardwareProgramming: HardwareProgramming,
     AppSoftwareProgramming: SoftwareProgramming,
     AppProductDesign: ProductDesign,
-    AppIoTProducts: IoTProducts
+    AppIoTProducts: IoTProducts,
+    appName: Name
   },
   data() {
     return {
@@ -85,17 +88,14 @@ export default {
   cursor: pointer;
 }
 .skills_description {
+  font-family: "Open Sans", sans-serif;
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .side_nav {
   background-color: #f77e38;
   width: 20vw;
-}
-.main_wrapper {
-  background-color: #090057;
-  width: 80vw;
 }
 .side_nav_header p {
   color: #fff;
@@ -104,7 +104,13 @@ export default {
   font-size: 27px;
   margin-bottom: 20px;
 }
-
+.main_wrapper {
+  background-color: #090057;
+  width: 80vw;
+  padding: 20px;
+  font-size: 13px;
+  height: 100vh;
+}
 .skill_categories ul > li {
   padding-left: 20px;
   border-bottom: solid 1px #eee;
@@ -127,5 +133,50 @@ export default {
 .logo > img {
   height: 150px;
   width: 180px;
+}
+
+@media screen and (max-width: 758px) {
+  .side_nav_header {
+    color: #fff;
+    text-align: center;
+    display: none;
+  }
+  .skills_description {
+    display: flex;
+    flex-direction: column;
+  }
+  .ul_categories {
+    display: flex;
+  }
+  .skill_categories ul > li {
+    padding: 0;
+    max-width: 100%;
+    font-size: 12px;
+    margin: 2px;
+    margin-bottom: 15px;
+    /* padding-left: 2px; */
+  }
+  .side_nav {
+    background-color: #f77e38;
+    width: 100%;
+  }
+  .logo > img {
+    display: none;
+  }
+  .main_wrapper {
+    background-color: #090057;
+    width: 100vw;
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_wrapper {
+    height: 100%;
+    /* height: 100%; */
+  }
+  html {
+    height: 100vh;
+  }
 }
 </style>

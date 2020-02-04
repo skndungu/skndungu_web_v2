@@ -1,19 +1,32 @@
 <template>
   <div class="pcb_design">
     <div class="pcb_design_content">
-      <div class="sub_title_content">PCB Design <br> <br> Experience</div>
-      <p>Through my 4 years of professional experience in the fields of electronics, industrial control and metrology I’ve acquired many skills on both sides of the fence dividing design from maintenance, that together with my unstoppable drive to tinker and improve have shaped my mind regarding design for maintenance and reliability. I always derive great satisfaction from seeing a new project reach completion, or making an old system perform better than it did before. I am a very fast and avid learner, most of my skills in electronics and software development come directly from my own tinkering, self learning and practical training.</p>
+      <div class="sub_title_content">
+        <span  class="sub_title_header"> PCB Design </span>
+         Experience</div>
+            <p>I am an Electrical and Electronics Designs Engineer specializing and Accomplished in the area of Embedded Systems, Product Design & Prototyping, Schematics, and PCB layout.
+            I have run quite some miles being in the field for more than 6 years I have become an Accomplished Designer in RF, Impedance control, EMI/EMC, Signal Integrity, High-Speed Designs, FPGA, DRAM, BGA designing standards-based and professional PCB layout for industry standards - Internationally working with companies from all over       
+    </p>
       <div class="sub_title_content">Areas of Concentration</div>
       <p>
         In order to align my self with the way the world
         is mostly leaning to I have focused on few key areas to also play a role in development of wearables and IoT products based on this areas: 
         <ul>
+          <li> Single Sheet to Multi sheet Schematics</li>
+          <li> Single/double-sided and Multi-layer PCBs layouts</li>
+          <li> Digital video, audio, and other multimedia interfaces: HDMI, MIPI DSI/CSI, I2S, TDM, etc</li>
+          <li>Typical data and control interfaces: UART, USB, SPI, I2C, SDIO, PCIe, etc.</li>
           <li>RF PCB designs and Layout</li>
           <li>High Speed PCB designs and Layout</li>
-          <li>EMC/EMI Techniques</li>
-          <li>FCC, CE, UL, RoHs ... etc </li>
+          <li>EMC/EMI emission control techniques</li>
+          <li>FCC, CE, UL, ANSI-C, RoHs ... etc </li>
           <li>Power Supplies - Switch Mode Power Supplies(SMPS) and LDOs</li>
           <li>Microcotroller based designs(Atmel, STM32, PIC)</li>
+          <li>Signal Integrity</li>
+          <li>CAN Protocols</li>
+          <li> ECAD Library Administration</li>
+          <li>IPC standards-based models</li>
+          <li>... and more</li>
         </ul>
       </p>
       <div class="sub_title_content">Tools I Use</div>
@@ -24,7 +37,7 @@
           <br> KiCad 
           </li>
           <li> <img class="tool_icon" src="./assets/altium_designer.webp" alt="">  
-          <br> Altium Designer</li>
+          <br> Altium</li>
           <li> <img class="tool_icon" src="./assets/eagle.jpeg" alt=""> 
            <br> Eagle CAD</li>
           <li> <img class="tool_icon" src="./assets/allegro.jpg" alt=""> <br> Allegro</li>
@@ -40,7 +53,9 @@ export default {};
 
 <style scoped>
 .pcb_design p {
+  font-family: "Open Sans", sans-serif;
   color: #fff;
+  height: 100%;
 }
 .header_img > img {
   height: 150px;
@@ -69,5 +84,18 @@ export default {};
   border-radius: 6px;
   margin-top: 20px;
   /* margin-top: 60px; */
+}
+
+@media screen and (max-width: 758px) {
+.pcb_design_content{
+  display: flex;
+  flex-direction: column;
+}
+.pcb_design_content p {
+  max-width: 100;
+}
+.sub_title_header{
+  display: none;
+}
 }
 </style>

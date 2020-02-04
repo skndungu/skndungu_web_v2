@@ -6,6 +6,7 @@
       </figure>
       <figure class="gallery_pcb_2">
         <img src="../assets/pcb/pcb_2.png" class="gallery__img" alt />
+        <div class="img_description">Motor control</div>
       </figure>
       <figure class="gallery_pcb_3">
         <img src="../assets/pcb/pcb30.png" class="gallery__img" alt />
@@ -63,14 +64,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {}
+};
 </script>
 
 <style scoped>
-.projects {
-  /* background-image: url("../assets/projects.jpg"); */
-  background-size: cover;
-  height: 100vh;
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
 }
 .heading_1 {
   position: relative;
@@ -132,13 +141,12 @@ export default {};
 }
 
 .gallery {
-  /* position: relative; */
   display: grid;
-  background: rgba(193, 188, 188, 0.379);
+  background: #f77e38;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(15, 5vw);
-  grid-gap: 3px;
-  padding: 3px;
+  grid-gap: 1.5px;
+  padding: 1.5px;
 }
 
 /* PCB */
@@ -231,39 +239,4 @@ export default {};
   grid-row: 14 / -1;
   grid-column: 4 / span 2;
 }
-/*
-.gallery_pcb_1:hover {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0.2;
-  transition: all 0.5s;
-}
-.gallery_pcb_2:hover {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  /* background: rgba(0, 0, 0, 0.7); 
-  opacity: 0.2;
-  transition: all 0.5s;
-}
-
-.gallery_pcb_1:hover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 1;
-} */
 </style>

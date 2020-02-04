@@ -3,6 +3,7 @@
     <div class="heading">
       <app-back-btn class="back_btn"></app-back-btn>
       <p>About Me !</p>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn></app-menu-btn>
     <div class="grid_content">
@@ -12,10 +13,10 @@
         </div>
         <div class="side_left_heading">Short Bio</div>
           <p class="side_right_para">
-          Through my 4 years of professional experience in the fields of electronics, industrial control and metrology I’ve acquired many skills on both sides of the fence dividing design from maintenance, that together with my unstoppable drive to tinker and improve have shaped my mind regarding design for maintenance and reliability. I always derive great satisfaction from seeing a new project reach completion, or making an old system perform better than it did before. I am a very fast and avid learner, most of my skills in electronics and software development come directly from my own tinkering, self learning and practical training
+          Through my 4 years of professional experience in the fields of electronics, industrial products desin and development, I’ve acquired many skills on both sides of the fence dividing design from maintenance, that together with my unstoppable drive to tinker and improve have shaped my mind regarding design for maintenance and reliability. I always derive great satisfaction from seeing a new project reach completion, or making an old system perform better than it did before. I am a very fast and avid learner, most of my skills in electronics and software development come directly from my own tinkering, self learning and practical training
           I have worked for and with lots of clients from all over the world on
           idea development and molding it to a product see products on
-          <a
+          <a id="work_style"
             href
           >work</a>
           section to get a glimpse of products we have developed and designed for
@@ -49,10 +50,12 @@
 <script>
 import BackBtn from "./shared/Back";
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 export default {
   components: {
     AppBackBtn: BackBtn,
-    appMenuBtn: MenuBtn
+    appMenuBtn: MenuBtn,
+    appName: Name
   },
   methods: {
     redirectHome() {
@@ -79,6 +82,14 @@ export default {
   letter-spacing: 1.8px;
 }
 
+#name {
+  position: absolute;
+  right: 10px;
+  font-family: "Nunito", sans-serif;
+   /* font-family: "Pacifico", cursive; */
+  font-size: 10px;
+  color: rgb(131, 129, 129);
+}
 .back_btn {
   position: absolute;
   left: 10px;
@@ -86,6 +97,7 @@ export default {
 }
 
 .grid_content {
+  font-family: "Open Sans", sans-serif;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -107,6 +119,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 .side_left_heading {
   position: relative;
@@ -133,7 +146,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .side_right_para {
@@ -148,9 +161,13 @@ export default {
   display: flex;
   flex-direction: column;
 }
+#work_style{
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+}
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 758px) {
   .grid_content {
     display: flex;
     flex-direction: column;
@@ -170,7 +187,6 @@ export default {
     background-color: #f77e38;
     color: #000;
     font-size: 14px;
-    height: 100vh;
   }
   .side_right_heading,.side_left_heading {
   text-align: center;
@@ -180,5 +196,15 @@ export default {
   font-weight: 700;
   letter-spacing: 2px;
 }
+}
+
+@media screen and (max-width: 1024px) {
+   .grid_content {
+    display: flex;
+    flex-direction: column;
+  }
+    .side_left,.side_right{
+    height: 100%;
+  }
 }
 </style>

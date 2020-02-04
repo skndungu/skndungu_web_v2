@@ -86,4 +86,22 @@ export default {};
   height: 70px;
   width: 90px;
 }
+
+@media screen and (max-width: 758px) {
+  .tool_icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+.tool_icon_node{
+  height: 60px;
+  width: 60px;
+}
+.software_tools{
+  font-size: 10px;
+}
+
+}
 </style>

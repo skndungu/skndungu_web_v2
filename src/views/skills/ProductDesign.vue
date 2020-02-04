@@ -23,7 +23,17 @@
       </p>
       <div class="sub_title_content">Tools I Use</div>
       <p>
-        I use the following tools, it all depends with the clients preference, my tools include: 
+       In this area a synergy of tools from this fields is done in a very precise manner. 
+              <ul class="software_tools">
+          <li><img class="tool_icon" src="./assets/hardware.png" alt="">
+          <br> Hardware Programming
+          </li>
+          <li> <img class="tool_icon" src="./assets/software.jpeg" alt="">  
+          <br> Software Programming </li>
+          <li> <img class="tool_icon" src="./assets/mechanical.png" alt=""> 
+           <br> Mechanical design</li>
+          <li> <img class="tool_icon" src="./assets/electronics.png" alt=""> <br>Hardware Design</li>
+        </ul>
       </p>
     </div>
   </div>

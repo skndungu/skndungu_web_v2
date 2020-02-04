@@ -3,6 +3,7 @@
     <div class="heading">
       <p>Clients</p>
       <app-back-btn class="back_btn"></app-back-btn>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn></app-menu-btn>
     <div class="clients">
@@ -21,10 +22,12 @@
 <script>
 import BackBtn from "./shared/Back";
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 export default {
   components: {
     AppBackBtn: BackBtn,
-    appMenuBtn: MenuBtn
+    appMenuBtn: MenuBtn,
+    appName: Name
   },
   data() {
     return {
@@ -117,5 +120,26 @@ export default {
   margin-left: 20vw;
   border-bottom: 1px solid #eee;
   width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  #home_name {
+    display: none !important;
+  }
+  #logo {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+  }
+  #client_list {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+  }
+  .list_items {
+    display: flex;
+    margin-left: 5vw;
+    border-bottom: 1px solid #eee;
+  }
 }
 </style>

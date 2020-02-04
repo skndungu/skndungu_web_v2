@@ -1,6 +1,8 @@
 <template>
-  <div class="home-btn">
-    <i class="fa fa-chevron-left fa-2x" @click="redirectHome"></i>
+  <div>
+    <div class="home-btn">
+      <i class="fa fa-chevron-left fa-2x" @click="redirectHome"></i>
+    </div>
   </div>
 </template>
 

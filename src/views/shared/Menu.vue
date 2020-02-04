@@ -109,15 +109,18 @@ export default {
 .side_navigation_active {
   position: absolute;
   top: 0;
+  z-index: 1000;
   right: -170px;
   background-color: #000;
   height: 100%;
   width: 100%;
   transform: translateX(-200);
-  animation: slide_in 0.7s forwards;
+  animation: slide_in 0.8s forwards;
+  height: 100vh;
 }
 .side_navigation_not_active {
-  animation: slide_in 0.7s forwards;
+  transform: translateX(200);
+  animation: slide_out 0.7s backwards;
   display: none;
 }
 .side_navigation_list {

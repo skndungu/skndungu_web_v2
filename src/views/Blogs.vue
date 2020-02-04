@@ -3,12 +3,16 @@
     <div class="heading">
       <p>Blogs</p>
       <app-back-btn class="back_btn"></app-back-btn>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn class="new_home_btn"></app-menu-btn>
     <div class="blogs">
       <div class="page_title">
         This page shows Blogs I have found intersting from other
         design engineer's as well as mine, feel free to follow on at topic you might find intersting. I use this blogs for my daily refreshers as well as learning some new approach.
+        <br />
+        <br />
+        <p>This blogs will provide a path way to become a great Designer!!</p>
       </div>
       <ul>
         <li id="list_blogs" v-for="blog in blogs" :key="blog.title">
@@ -16,11 +20,7 @@
           <br />
           <p class="blog_p">{{blog.description}}</p>
           <span>
-            <a
-              id="blog_link"
-              target="_blank"
-              href="https://www.microtype.io/high-power-pcb-design-tips-tricks/"
-            >Read More</a>
+            <a id="blog_link" target="_blank" :href="blog.link">Read More</a>
           </span>
           <br />
           <span class="blog_by">By: {{blog.by}}</span>
@@ -33,14 +33,34 @@
 <script>
 import BackBtn from "./shared/Back";
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 export default {
   components: {
     AppBackBtn: BackBtn,
-    appMenuBtn: MenuBtn
+    appMenuBtn: MenuBtn,
+    appName: Name
   },
   data() {
     return {
       blogs: [
+        {
+          title:
+            "Why AC supply is rectified first before stepping voltage down?",
+          link:
+            "https://electronics.stackexchange.com/questions/268814/why-ac-supply-is-rectified-first-before-stepping-voltage-down",
+          description:
+            "My question is why AC is first rectified instead of stepping it down with transformers ? As stepping down in DC with a buck converter wouldn't be as efficient as with transformers, why is this path chosen...?",
+          by: "StackExchange | Jonk, Adam Haun"
+        },
+        {
+          title:
+            "Difference between Linear Supply and Switch Mode Power Supply",
+          link:
+            "https://electronicscoach.com/difference-between-linear-supply-and-switch-mode-power-supply.html",
+          description:
+            "The linear power supply and Switch mode power supply, both supplies DC power to electrical and electronic circuits but the similarities end here. The crucial factor which differentiates linear power supply and SMPS is the working procedure. The Linear power supply converts high voltage AC into the low voltage using....",
+          by: "Electronics Coach"
+        },
         {
           title:
             "Narrow Band (NB) IoT – The next level Communication Network for Internet of Things",
@@ -139,6 +159,7 @@ export default {
 #list_blogs {
   background-color: #f77e38;
   height: 110px;
+  border-radius: 2px;
   max-width: 90%;
   margin: 0 auto;
   margin-top: 10px;
@@ -175,5 +196,20 @@ export default {
   margin: 0 auto;
   padding: 14px;
   font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  #home_name {
+    display: none !important;
+  }
+  #list_blogs {
+    background-color: #f77e38;
+    height: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-top: 10px;
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 2px;
+  }
 }
 </style>

@@ -3,6 +3,7 @@
     <div class="home_background_img">
       <div class="heading_1">
         Simon | Ndung'u
+        <app-name id="home_name"></app-name>
         <div class="slogan">Cut me, I Bleed Content</div>
       </div>
       <app-menu-btn></app-menu-btn>
@@ -19,14 +20,12 @@
       </div>
       <div class="paragraphs">
         <p class="para_1">
-          Hi! I am an embedded PCB designs engineer and a software developer based in Kenya
-          (the heart of Africa), I run quite a successful IoT based firm that handles freelance and
+          Hi! I am an International embedded PCB designs engineer and a software developer based in Kenya, I run quite a successful IoT based firm that handles freelance and
           long term projects for clients from all over the world.
         </p>
         <br />
-        <br />
         <p class="para_2">
-          I have diverse set of skiills that are well back from my background - Mechatronic
+          I have diverse set of skiills that are well backed from my background - Mechatronic
           Engineering, ranging from HTML5+CSS3+Javascript, Node js, Python for data analysis,
           Dart, Arduino, RF and High-Speed PCB Designs all the way to Product design & development.
         </p>
@@ -69,10 +68,12 @@
 
 <script>
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 export default {
   name: "home",
   components: {
-    appMenuBtn: MenuBtn
+    appMenuBtn: MenuBtn,
+    appName: Name
   }
 };
 </script>
@@ -95,6 +96,7 @@ export default {
   z-index: -1;
 }
 .heading_1 {
+  font-family: "Nunito", sans-serif;
   font-size: 22pt;
   color: #ffff;
   font-weight: 600;
@@ -104,13 +106,21 @@ export default {
   text-align: center;
 }
 .slogan {
+  /* font-family: "Pacifico", cursive; */
   font-family: "Arizonia", cursive;
-  font-weight: 50;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 22px;
   color: rgb(8, 255, 8);
   text-align: center;
 }
+#home_name {
+  position: absolute;
+  top: 38px;
+  right: 20px;
+  width: 100%;
+}
 .paragraphs {
+  font-family: "Nunito", sans-serif;
   font-size: 16.5px;
 }
 .para_1 {
@@ -147,6 +157,7 @@ export default {
 .side_navigation_list {
   position: absolute;
   right: 20px;
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
   color: #ffff;
@@ -164,7 +175,7 @@ export default {
   margin-right: 20px;
   font-size: 14px;
   cursor: pointer;
-  border-bottom: solid 0.5px #eeee;
+  border-bottom: solid 1px #eeee;
 }
 .side_navigation_list > router-link:hover {
   background-color: red;
@@ -201,7 +212,7 @@ export default {
   color: #f78a48;
 }
 .hr_light {
-  border-bottom: solid 0.8px #eeee;
+  border-bottom: solid 1px rgb(238, 238, 238);
   max-width: 55vw;
   margin: 0 auto;
 }
@@ -233,6 +244,10 @@ export default {
     .heading_1 {
       display: none !important;
     }
+  }
+
+  #home_name {
+    display: none !important;
   }
 }
 </style>

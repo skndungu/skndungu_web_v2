@@ -3,13 +3,14 @@
     <div class="heading">
       <p>Contacts</p>
       <app-back-btn class="back_btn"></app-back-btn>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn class="new_home_btn"></app-menu-btn>
     <div class="contacts">
       <div class="contact_header">
         <p class="contacts_para1">I'd Love to hear from you</p>
         <p class="contacts_para2">
-          Whether you have a question about features, pricing, prototypes,
+          Whether you have a question about a product, pricing, prototypes,
           need to talk, make collaborations or anything else. I am here to
           to cater for such needs.
         </p>
@@ -18,28 +19,35 @@
         <div class="contact_detail_header">This is how you can reach me!!</div>
         <div class="contacts_reach">
           <div class="email">
-            <a href="mailto:skndungu75@outlook.com" target="_blank">
+            <a id="a_style" href="mailto:skndungu75@outlook.com" target="_blank">
               <i class="fa fa-envelope fa-3x"></i>
               <br />
               <span id="link_style">Email</span>
             </a>
           </div>
           <div class="skype">
-            <a href="skype:live:skndungu75_1?add">
+            <a id="a_style" href="skype:live:skndungu75_1?add">
               <i class="fa fa-skype fa-3x"></i>
-              <br />Skype
+              <br />
+              <span id="link_style">Skype</span>
             </a>
           </div>
           <div class="telephone">
-            <a href="tel:+254712283875">
+            <a id="a_style" href="tel:+254712283875">
               <i class="fa fa-phone fa-3x"></i>
-              <br />Call
+              <br />
+              <span id="link_style">Call</span>
             </a>
           </div>
           <div class="linkedin">
-            <a href="https://www.linkedin.com/in/simon-ndung-u-06095296" target="_blank">
+            <a
+              id="a_style"
+              href="https://www.linkedin.com/in/simon-ndung-u-06095296"
+              target="_blank"
+            >
               <i class="fa fa-linkedin fa-3x"></i>
-              <br />LinkedIn
+              <br />
+              <span id="link_style">LinkedIn</span>
             </a>
           </div>
         </div>
@@ -51,10 +59,12 @@
 <script>
 import BackBtn from "./shared/Back";
 import MenuBtn from "./shared/Menu";
+import Name from "./shared/Name";
 export default {
   components: {
     AppBackBtn: BackBtn,
-    appMenuBtn: MenuBtn
+    appMenuBtn: MenuBtn,
+    appName: Name
   },
   methods: {
     redirectHome() {
@@ -115,10 +125,10 @@ export default {
 .contacts_reach {
   max-width: 90%;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  margin: 0;
   font-family: "Arizonia", cursive;
-  font-size: 16px;
+  font-size: 18px;
 }
 .fa-envelope,
 .fa-phone,
@@ -136,8 +146,33 @@ export default {
 .fa-linkedin {
   color: #0072b1;
 }
+#a_style {
+  text-decoration: none;
+}
 #link_style {
-  text-decoration-style: none !important;
-  /* color: #2b2a64; */
+  color: #2b2a64;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  #home_name {
+    display: none !important;
+  }
+  #a_style {
+    margin: 15px;
+    text-decoration: none;
+  }
+  #link_style {
+    font-size: 18px;
+    margin: 15px;
+  }
+  .contacts_reach {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arizonia", cursive;
+    font-size: 18px;
+  }
 }
 </style>

@@ -3,6 +3,7 @@
     <div class="heading">
       <app-back-btn class="menu_btn"></app-back-btn>
       <p>Previous | Projects</p>
+      <app-name id="home_name"></app-name>
     </div>
     <app-menu-btn class="new_home_btn"></app-menu-btn>
     <div class="projects_intro">
@@ -33,7 +34,7 @@
        "
       >Product Design</div>
     </div>
-    <p style="color: white">{{selectedComponent}}</p>
+    <!-- <p style="color: white">{{selectedComponent}}</p> -->
     <keep-alive>
       <component :is="selectedComponent"></component>
     </keep-alive>
@@ -46,10 +47,12 @@ import MenuBtn from "./shared/Menu";
 import ProjectsPcbDesign from "./Projects_pcb";
 import ProjectsWebDesign from "./Projects_web";
 import ProjectsProductDesign from "./Projects_product";
+import Name from "./shared/Name";
 export default {
   components: {
     AppBackBtn: BackBtn,
     AppMenuBtn: MenuBtn,
+    appName: Name,
     AppProjectsPcbDesign: ProjectsPcbDesign,
     AppProjectsWebDesign: ProjectsWebDesign,
     AppProjectsProductDesign: ProjectsProductDesign
@@ -110,10 +113,6 @@ export default {
   left: 20px;
   cursor: pointer;
 }
-.projects {
-  background-size: cover;
-  height: 100%;
-}
 .heading_1 {
   position: relative;
   z-index: 100;
@@ -125,6 +124,7 @@ export default {
   padding-bottom: 25px;
 }
 .projects_intro {
+  font-family: "Open Sans", sans-serif;
   max-width: 75vw;
   margin: 0 auto;
   color: #fff;
@@ -136,6 +136,7 @@ export default {
   padding: 12px;
 }
 .project_headers .btn {
+  font-family: "Open Sans", sans-serif;
   padding: 10px;
   border-radius: 2px;
   margin-right: 5px;
@@ -144,9 +145,8 @@ export default {
   cursor: pointer;
 }
 .active {
-  background-color: #ffa069 !important;
+  background-color: #f77e38 !important;
   color: white;
   transition: all 0.8s;
-  /* display: none; */
 }
 </style>

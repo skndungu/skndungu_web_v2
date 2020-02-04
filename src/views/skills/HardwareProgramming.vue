@@ -27,9 +27,9 @@
           <br> Arduino
           </li>
           <li> <img class="tool_icon" src="./assets/arm_cortex.jpg" alt="">  
-          <br> ARM based </li>
+          <br> ARM </li>
           <li> <img class="tool_icon" src="./assets/raspberry_pi.png" alt=""> 
-           <br> Raspberry Pi</li>
+           <br> Raspberry</li>
           <li> <img class="tool_icon" src="./assets/embedded_rust.jpg" alt=""> <br> Embedded Rust</li>
         </ul>
       </p>
@@ -41,8 +41,12 @@ export default {};
 </script>
 
 <style scoped>
+.hardware_design{
+  height: 100vh;
+}
 .hardware_design p {
   color: #fff;
+  height: 100%;
 }
 .header_img > img {
   height: 150px;
@@ -50,6 +54,7 @@ export default {};
 }
 .pcb_design_content p {
   max-width: 80%;
+  height: 100%;
   margin: 0 auto;
   padding-top: 8px;
 }
@@ -70,6 +75,13 @@ export default {};
   width: 50px;
   border-radius: 6px;
   margin-top: 20px;
-  /* margin-top: 60px; */
+}
+@media screen and (max-width: 768px) {
+.tool_icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  /* margin: 5px; */
+}
 }
 </style>

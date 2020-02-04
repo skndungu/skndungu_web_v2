@@ -17,4 +17,10 @@
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width: 713px) {
+  #home_name {
+    display: none !important;
+  }
+}
 </style>
